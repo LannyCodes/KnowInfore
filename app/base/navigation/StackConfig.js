@@ -9,6 +9,12 @@ import LoginScene from '../../components/pages/login'
 import MessageDetailScene from '../../components/pages/message/MessageDetail'
 import SearchMessageScene from '../../components/pages/message/search'
 import ModifyPersonInfoScene from '../../components/pages/personal/ModifyPersonInfoScene'
+//备货
+import StockManageScene from '../../components/pages/stockmanage'
+import StockDetailScene from '../../components/pages/stockmanage/stockdetail'
+import StockReceiptScene from '../../components/pages/stockmanage/stockdetail/StockReceiptScene'
+import StockConfirmScene from '../../components/pages/stockmanage/stockconfirm/StockConfirmScene'
+import SearchStockScene from '../../components/pages/stockmanage/search'
 let CommonScene = {
     Bridge: {
         screen: Bridge,
@@ -56,12 +62,46 @@ const Person = {
     },
 };
 
+const StockManage = {
+    StockConfirm: {
+        screen: StockConfirmScene,
+        navigationOptions: {
+            header: null
+        }
+    },
+    StockManage: {
+        screen: StockManageScene,
+        navigationOptions: {
+            header: null
+        }
+    },
+    StockDetail: {
+        screen: StockDetailScene,
+        navigationOptions: {
+            header: null
+        }
+    },
+    StockReceipt: {
+        screen: StockReceiptScene,
+        navigationOptions: {
+            header: null
+        }
+    },
+    SearchStock: {  //采购管理搜索页面
+        screen: SearchStockScene,
+        navigationOptions: {
+            header: null
+        }
+    },
+};
+
 const Navigator = StackNavigator({
     ...CommonScene,
     ...Tab,
     ...Login,
     ...Message,
     ...Person,
+    ...StockManage
 });
 
 export default Navigator;
